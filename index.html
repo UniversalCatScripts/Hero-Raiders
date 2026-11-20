@@ -6,6 +6,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <title>Hero Raiders</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html,body{width:100%;height:100%;overflow:hidden;background:#111;font-family:"Trebuchet MS","Arial Black",system-ui,sans-serif;color:#fff;user-select:none;-webkit-user-select:none;touch-action:none;overscroll-behavior:none}
@@ -177,6 +179,47 @@ button,.tb,.lv,.hcard,.card,.tier{transition:transform .14s cubic-bezier(.2,.8,.
 .keys{display:grid;grid-template-columns:auto auto;gap:6px 14px;font-size:14px;text-align:left;opacity:.9}
 .keys kbd{display:inline-block;min-width:28px;padding:3px 7px;border-radius:6px;background:#fff;color:#222;font-weight:900;font-family:inherit;box-shadow:0 2px 0 #999;text-align:center;margin-right:4px}
 @media (max-height:430px){#grid{grid-template-columns:repeat(8,minmax(56px,80px));gap:10px}.screen{gap:10px}}
+
+/* ===== clean theme ===== */
+:root{--panel:rgba(255,255,255,.07);--line:rgba(255,255,255,.12);--txt2:rgba(255,255,255,.72);--gold:#ffd166}
+html,body,button,input,select{font-family:"Nunito",ui-rounded,"SF Pro Rounded","Segoe UI",system-ui,sans-serif}
+.screen{background:linear-gradient(180deg,rgba(9,10,28,.78),rgba(9,10,28,.9));backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);gap:16px}
+h2{font-size:clamp(24px,5vmin,40px);color:#fff;text-shadow:none;letter-spacing:3px;font-weight:900}
+h2::after{content:'';display:block;width:44px;height:4px;border-radius:4px;background:var(--gold);margin:8px auto 0}
+.sub{color:var(--txt2);font-weight:600}
+.logo{color:var(--gold);text-shadow:0 4px 0 #c2410c,0 14px 30px rgba(0,0,0,.35);transform:rotate(-3deg)}
+.logo span{text-shadow:0 3px 0 #b91c1c,0 12px 24px rgba(0,0,0,.3)}
+.big{border-radius:18px;background:linear-gradient(180deg,#ffd166,#f59e0b);box-shadow:0 5px 0 #b45309,0 12px 28px rgba(245,158,11,.35)}
+.btn{border-radius:14px;font-weight:800;box-shadow:0 4px 0 rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.08)}
+.btn:not(.green):not(.shop):not(.key):not(.chal):not(.bp):not(.lb):not(.red){background:var(--panel);border-color:var(--line);box-shadow:0 4px 0 rgba(0,0,0,.25)}
+.hcard,.card,.tier,.chalCard,.profBox,.lv{background:var(--panel);border:1px solid var(--line);box-shadow:0 10px 26px rgba(0,0,0,.28);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.lv{border-radius:18px}.lv.locked{background:rgba(255,255,255,.03);color:rgba(255,255,255,.35)}
+.hcard .hn,.chalCard .hn{color:#fff;letter-spacing:1.5px}
+.hcard canvas,.card canvas,.chalCard canvas{box-shadow:inset 0 0 0 1px rgba(255,255,255,.1)}
+.tier.got{background:linear-gradient(180deg,rgba(34,197,94,.35),rgba(21,128,61,.35));border-color:rgba(134,239,172,.4)}
+.tab{background:var(--panel);border:1px solid var(--line);box-shadow:none;color:var(--txt2)}
+.tab.on{background:var(--gold);color:#3b1d00;border-color:transparent}
+.card.eq{border:2px solid var(--gold)}
+.card .rar{font-size:10.5px;font-weight:900;letter-spacing:1.2px;align-self:flex-start;margin:-2px 0 -2px 2px}
+.card.r-rare{box-shadow:0 0 0 1px rgba(56,189,248,.35),0 10px 26px rgba(0,0,0,.28)}
+.card.r-epic{box-shadow:0 0 0 1px rgba(192,132,252,.45),0 0 18px rgba(192,132,252,.18),0 10px 26px rgba(0,0,0,.28)}
+.card.r-legendary{box-shadow:0 0 0 1px rgba(251,191,36,.55),0 0 22px rgba(251,191,36,.25),0 10px 26px rgba(0,0,0,.28);animation:legGlow 2.4s ease-in-out infinite}
+@keyframes legGlow{50%{box-shadow:0 0 0 1px rgba(251,191,36,.9),0 0 30px rgba(251,191,36,.45),0 10px 26px rgba(0,0,0,.28)}}
+#coinPill,#profileChip{background:rgba(9,10,28,.6);border:1px solid var(--line);box-shadow:0 6px 18px rgba(0,0,0,.25);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+#coinPill{padding:6px 14px 6px 8px;font-size:18px}
+#coinPill .mini{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.08);color:#fff;font-size:15px;display:flex;align-items:center;justify-content:center}
+#coinPill .mini.off{opacity:.45}
+#coinPill .sep{width:1px;height:22px;background:var(--line);margin:0 2px}
+.icon{background:rgba(9,10,28,.5);border:1px solid var(--line);box-shadow:0 4px 14px rgba(0,0,0,.25);backdrop-filter:blur(6px)}
+.icon.off{opacity:.5}
+#hTime{text-shadow:0 2px 10px rgba(0,0,0,.35)}
+#hint{background:rgba(9,10,28,.65);border:1px solid var(--line);backdrop-filter:blur(6px)}
+#pfName:disabled{opacity:.8;cursor:not-allowed}
+.guestTag{font-size:11px;font-weight:900;letter-spacing:1px;color:#fbbf24;margin-top:4px}
+.picRow label{cursor:pointer}
+.plist small{background:#2563eb;border-radius:6px;padding:0 5px;font-size:10px}
+.lbRow .av{width:26px;height:26px;font-size:15px}
+.stat b{color:var(--gold)}
 </style>
 </head>
 <body>
@@ -185,7 +228,7 @@ button,.tb,.lv,.hcard,.card,.tier{transition:transform .14s cubic-bezier(.2,.8,.
 <div id="hud" class="hidden">
   <div class="hl"><div id="hLevel">LEVEL 1</div><div id="hTime">0:00.00</div><div id="hBonus"></div></div>
   <div class="hr">
-    <button class="icon" id="bMute" title="Sound">♪</button>
+    <button class="icon" id="bMute" title="Music">♫</button>
     <button class="icon" id="bRestart" title="Restart (R)">↻</button>
     <button class="icon" id="bPause" title="Pause (P)">❚❚</button>
   </div>
@@ -199,7 +242,7 @@ button,.tb,.lv,.hcard,.card,.tier{transition:transform .14s cubic-bezier(.2,.8,.
 <div id="hint" class="hidden"></div>
 
 <div id="profileChip" class="hidden"><span id="pcAv"></span><div><div id="pcName"></div><div id="pcLv"></div></div></div>
-<div id="coinPill" class="hidden"><i class="coin"></i><span id="coinN">0</span></div>
+<div id="coinPill" class="hidden"><button class="mini" id="bMusicT" title="Music">♫</button><button class="mini" id="bSfxT" title="Sound effects">🔊</button><span class="sep"></span><i class="coin"></i><span id="coinN">0</span></div>
 
 <div id="sTitle" class="screen">
   <div class="logo">HERO<span>RAIDERS</span></div>
@@ -250,7 +293,8 @@ button,.tb,.lv,.hcard,.card,.tier{transition:transform .14s cubic-bezier(.2,.8,.
   <h2>PROFILE</h2>
   <div class="profBox">
     <div class="profTop"><div id="pfAv" class="bigAv"></div>
-      <div><input id="pfName" maxlength="16" placeholder="Your name"><div id="pfLv" class="sub"></div></div></div>
+      <div><input id="pfName" maxlength="16" placeholder="Your name"><div id="pfGuest" class="guestTag hidden">GUEST · sign in with Google to choose your name</div><div id="pfLv" class="sub"></div></div></div>
+    <div class="row picRow"><label class="btn small" for="pfFile">📷 UPLOAD PICTURE</label><input id="pfFile" type="file" accept="image/*" hidden><button class="btn small hidden" id="bPicDel">✕ REMOVE PICTURE</button></div>
     <div id="pfAvatars" class="avatars"></div>
     <div id="pfStats" class="pstats"></div>
     <div class="gArea"><div id="gSigned" class="gSigned hidden"></div><div id="gBtn"></div><button class="btn small hidden" id="bGOut">Sign out of Google</button><div id="gNote" class="sub"></div></div>
@@ -282,6 +326,7 @@ button,.tb,.lv,.hcard,.card,.tier{transition:transform .14s cubic-bezier(.2,.8,.
 <div id="sPause" class="screen hidden">
   <h2>PAUSED</h2>
   <div class="row"><button class="btn green" id="bResume">▶ RESUME</button><button class="btn" id="bPRestart">↻ RESTART</button><button class="btn" id="bPLevels">☰ EXIT</button></div>
+  <div class="row"><button class="btn small" id="bMusicP">♫ MUSIC: ON</button><button class="btn small" id="bSfxP">🔊</button></div>
 </div>
 
 <div id="sDone" class="screen hidden">
@@ -911,10 +956,13 @@ const AVATARS=['😎','🦊','🐯','🐼','🐸','🦁','🐙','🤖','👾','�
 const AV_COLORS=['#f59e0b','#ef4444','#8b5cf6','#10b981','#3b82f6','#ec4899','#14b8a6','#f97316'];
 let profiles=loadJSON(SK+'.profiles',null);
 if(!profiles||!profiles.list||!profiles.list.length){
-  profiles={list:[{id:'p1',name:'Player',avatar:'😎',color:'#f59e0b'}],current:'p1'};
+  profiles={list:[{id:'p1',name:'Guest',avatar:'😎',color:'#f59e0b'}],current:'p1'};
   const old=loadJSON('motoStuntRush',null); if(old) saveJSON(SK+'.save.p1',old);   // bring over progress from Moto Stunt Rush
   saveJSON(SK+'.profiles',profiles);
 }
+// anyone not signed in with Google plays as a Guest
+for(const p of profiles.list) if(!String(p.id).startsWith('g_')&&!/^Guest/.test(p.name)) p.name='Guest';
+function isGuest(P){ return !String(P.id).startsWith('g_'); }
 function curProfile(){ return profiles.list.find(p=>p.id===profiles.current)||profiles.list[0]; }
 function saveProfiles(){ saveJSON(SK+'.profiles',profiles); }
 const HKEYS=['biker','web','flight','board','kart','ninja','truck','jet'];
@@ -989,8 +1037,8 @@ function googleSignOut(){
   try{ if(window.google&&google.accounts) google.accounts.id.disableAutoSelect(); }catch(e){}
   gToken=null; gExp=0;
   let local=profiles.list.find(p=>!p.id.startsWith('g_'));
-  if(!local){ local={id:'p'+Date.now().toString(36),name:'Player',avatar:'😎',color:'#f59e0b'}; profiles.list.push(local); }
-  switchProfile(local.id); updGoogleUI(); toast('Signed out — playing as '+local.name);
+  if(!local){ local={id:'p'+Date.now().toString(36),name:'Guest',avatar:'😎',color:'#f59e0b'}; profiles.list.push(local); }
+  switchProfile(local.id); updGoogleUI(); toast('Signed out — playing as Guest');
 }
 function tokenFresh(){ return gToken&&Date.now()/1000<gExp-60; }
 function updGoogleUI(){
@@ -1045,6 +1093,7 @@ function initAudio(){ if(ac) { if(ac.state==='suspended') ac.resume(); return; }
     eng=ac.createOscillator(); eng.type='sawtooth'; eng2=ac.createOscillator(); eng2.type='square';
     filt=ac.createBiquadFilter(); filt.type='lowpass'; filt.frequency.value=600; engGain=ac.createGain(); engGain.gain.value=0;
     const g2=ac.createGain(); g2.gain.value=0.35; eng.connect(filt); eng2.connect(g2).connect(filt); filt.connect(engGain).connect(master); eng.start(); eng2.start();
+    startMusicEngine();
   }catch(e){ ac=null; } }
 function engineSound(speed,gas,on){ if(!ac) return; const t=ac.currentTime, f=42+Math.min(speed,1100)*0.095+(gas?22:0);
   eng.frequency.setTargetAtTime(f,t,0.06); eng2.frequency.setTargetAtTime(f*0.5,t,0.06); filt.frequency.setTargetAtTime(gas?1100:600,t,0.1);
@@ -1052,7 +1101,49 @@ function engineSound(speed,gas,on){ if(!ac) return; const t=ac.currentTime, f=42
 function tone(freqs,dur=0.12,type='square',vol=0.08){ if(!ac) return; let t=ac.currentTime; for(const f of freqs){ const o=ac.createOscillator(),g=ac.createGain(); o.type=type; o.frequency.value=f; g.gain.setValueAtTime(vol,t); g.gain.exponentialRampToValueAtTime(0.001,t+dur); o.connect(g).connect(master); o.start(t); o.stop(t+dur); t+=dur*0.75; } }
 function noise(dur=0.5,vol=0.35,lp=1200){ if(!ac) return; const n=Math.floor(ac.sampleRate*dur), buf=ac.createBuffer(1,n,ac.sampleRate), d=buf.getChannelData(0); for(let i=0;i<n;i++) d[i]=(Math.random()*2-1)*Math.pow(1-i/n,2);
   const s=ac.createBufferSource(); s.buffer=buf; const f=ac.createBiquadFilter(); f.type='lowpass'; f.frequency.value=lp; const g=ac.createGain(); g.gain.value=vol; s.connect(f).connect(g).connect(master); s.start(); }
-function setMute(m){ save.muted=m; persist(); document.getElementById('bMute').textContent=m?'✕':'♪'; if(master) master.gain.value=m?0:1; }
+function setMute(m){ save.muted=m; persist(); if(master) master.gain.value=m?0:1; updAudioBtns(); }
+
+/* ---------- music: small generative chiptune sequencer ---------- */
+let musicGain=null, musicTimer=null, musicTrack=null, mNext=0, mStep=0, noiseBuf=null;
+const mtof=n=>440*Math.pow(2,(n-69)/12);
+const TRACKS={
+  menu:{bpm:92, prog:[[57,60,64,67],[53,57,60,64],[48,52,55,59],[55,59,62,65]], arp:[0,2,1,3,2,1,0,2], bassEvery:4, drums:{k:[0,10],s:[8],h:[4,12]}, lead:'sine', vol:0.8},
+  game:{bpm:134, prog:[[50,57,62,65],[46,53,58,62],[48,55,60,64],[45,52,57,61]], arp:[0,1,2,3,2,1,2,3], bassEvery:2, drums:{k:[0,6,8,14],s:[4,12],h:[2,6,10,14]}, lead:'square', vol:0.7},
+  chal:{bpm:150, prog:[[52,59,64,67],[48,55,60,64],[50,57,62,66],[47,54,59,62]], arp:[0,2,3,1,0,3,2,1], bassEvery:2, drums:{k:[0,4,8,12],s:[4,12],h:[2,6,10,14,15]}, lead:'square', vol:0.7},
+};
+function mNote(freq,t,dur,type,vol){ const o=ac.createOscillator(),g=ac.createGain(); o.type=type; o.frequency.value=freq;
+  g.gain.setValueAtTime(0.0001,t); g.gain.linearRampToValueAtTime(vol,t+0.01); g.gain.exponentialRampToValueAtTime(0.0001,t+dur);
+  o.connect(g).connect(musicGain); o.start(t); o.stop(t+dur+0.02); }
+function mDrum(kind,t){
+  if(kind==='k'){ const o=ac.createOscillator(),g=ac.createGain(); o.frequency.setValueAtTime(140,t); o.frequency.exponentialRampToValueAtTime(40,t+0.12); g.gain.setValueAtTime(0.55,t); g.gain.exponentialRampToValueAtTime(0.001,t+0.16); o.connect(g).connect(musicGain); o.start(t); o.stop(t+0.18); return; }
+  const s=ac.createBufferSource(); s.buffer=noiseBuf; const f=ac.createBiquadFilter(), g=ac.createGain();
+  f.type=kind==='s'?'bandpass':'highpass'; f.frequency.value=kind==='s'?1800:7000; const d=kind==='s'?0.14:0.04;
+  g.gain.setValueAtTime(kind==='s'?0.32:0.12,t); g.gain.exponentialRampToValueAtTime(0.001,t+d); s.connect(f).connect(g).connect(musicGain); s.start(t); s.stop(t+d+0.02); }
+function musicTick(){
+  if(!ac||!musicTrack) return; const T=TRACKS[musicTrack], sp=60/T.bpm/4;
+  while(mNext<ac.currentTime+0.25){
+    const bar=Math.floor(mStep/16)%T.prog.length, st=mStep%16, ch=T.prog[bar];
+    if(st%T.bassEvery===0) mNote(mtof(ch[0]-12),mNext,sp*T.bassEvery*0.9,'triangle',0.22);
+    if(st%2===0){ const n=ch[T.arp[(st/2)%T.arp.length]]+12; mNote(mtof(n),mNext,sp*1.6,T.lead,0.045*T.vol*2); }
+    if(st===0&&bar%2===1) mNote(mtof(ch[3]+12),mNext,sp*6,'sine',0.05);
+    for(const k in T.drums) if(T.drums[k].includes(st)) mDrum(k,mNext);
+    mNext+=sp; mStep++;
+  }
+}
+function setMusic(track){
+  if(track===musicTrack) return; musicTrack=track; if(!ac||!musicGain) return;
+  const t=ac.currentTime; musicGain.gain.cancelScheduledValues(t); musicGain.gain.setValueAtTime(musicGain.gain.value,t); musicGain.gain.linearRampToValueAtTime(0,t+0.25);
+  setTimeout(()=>{ if(!ac) return; mNext=ac.currentTime+0.05; mStep=0; if(musicTrack&&save.music!==false) musicGain.gain.linearRampToValueAtTime(0.16,ac.currentTime+0.6); },300);
+}
+function startMusicEngine(){ if(!ac||musicGain) return;
+  musicGain=ac.createGain(); musicGain.gain.value=0; musicGain.connect(ac.destination);
+  const n=ac.sampleRate*0.3; noiseBuf=ac.createBuffer(1,n,ac.sampleRate); const d=noiseBuf.getChannelData(0); for(let i=0;i<n;i++) d[i]=Math.random()*2-1;
+  musicTimer=setInterval(musicTick,60); const tr=musicTrack; musicTrack=null; setMusic(tr||'menu'); }
+function setMusicOn(on){ save.music=on; persist(); if(musicGain&&ac){ const t=ac.currentTime; musicGain.gain.cancelScheduledValues(t); musicGain.gain.linearRampToValueAtTime(on&&musicTrack?0.16:0,t+0.3); } updAudioBtns(); }
+function updAudioBtns(){ const m=save.music!==false, sfx=!save.muted;
+  for(const id of ['bMute','bMusicT']){ const b=document.getElementById(id); if(b){ b.textContent=m?'♫':'♫̸'; b.classList.toggle('off',!m); b.title=m?'Music on':'Music off'; } }
+  for(const id of ['bSfxT','bSfxP']){ const b=document.getElementById(id); if(b){ b.textContent=sfx?'🔊':'🔇'; b.classList.toggle('off',!sfx); } }
+  const pm=document.getElementById('bMusicP'); if(pm) pm.textContent=m?'♫ MUSIC: ON':'♫ MUSIC: OFF'; }
 
 /* ---------- game state ---------- */
 let state='title', curHero='biker', curLevel=0, world=null, level=null, theme=THEMES.day, mode='story', chalNow=null;
@@ -1078,12 +1169,12 @@ const BP_REWARDS=[null,
  {coins:400},{coins:450},{coins:450},{hero:'truck'},{coins:500},{coins:500},{coins:550},{coins:600},{coins:750},{hero:'jet',skin:'season1'}];
 const $=id=>document.getElementById(id);
 const SCREENS=['sTitle','sHeroes','sLevels','sPause','sDone','sShop','sKeyper','sBP','sChal','sProfile','sLB'];
-function show(id){ if(id&&id!=='sPause'){ $('hud').classList.add('hidden'); $('touch').classList.add('hidden'); $('hint').classList.add('hidden'); } for(const s of SCREENS) $(s).classList.toggle('hidden',s!==id); $('coinPill').classList.toggle('hidden',!id); $('profileChip').classList.toggle('hidden',!id||id==='sPause'); if(id) updGoogleUI(); updChrome(); }
+function show(id){ if(id&&id!=='sPause') setMusic('menu'); if(id&&id!=='sPause'){ $('hud').classList.add('hidden'); $('touch').classList.add('hidden'); $('hint').classList.add('hidden'); } for(const s of SCREENS) $(s).classList.toggle('hidden',s!==id); $('coinPill').classList.toggle('hidden',!id); $('profileChip').classList.toggle('hidden',!id||id==='sPause'); if(id) updGoogleUI(); updChrome(); }
 function stagger(el){ [...el.children].forEach((c,i)=>c.style.setProperty('--i',Math.min(i,24))); el.classList.remove('stagger'); void el.offsetWidth; el.classList.add('stagger'); clearTimeout(el._st); el._st=setTimeout(()=>el.classList.remove('stagger'),1200); }
 function updCoins(bump){ $('coinN').textContent=save.coins; if(bump){ const c=$('coinPill'); c.classList.remove('bump'); void c.offsetWidth; c.classList.add('bump'); } }
-function avHTML(P){ return P.google&&P.google.picture?'<img src="'+P.google.picture+'" alt="" referrerpolicy="no-referrer">':P.avatar; }
+function avHTML(P){ if(!P) return '😎'; if(P.img) return '<img src="'+P.img+'" alt="">'; return P.google&&P.google.picture?'<img src="'+P.google.picture+'" alt="" referrerpolicy="no-referrer">':P.avatar; }
 function tierOf(xp){ return Math.min(BP_TIERS,Math.floor(xp/BP_XP)); }
-function updChrome(){ updCoins(); const P=curProfile(); const av=$('pcAv'); av.innerHTML=avHTML(P); av.style.background=P.color; $('pcName').textContent=P.name; $('pcLv').textContent='LV '+(Math.floor(save.xp/BP_XP)+1)+' · Tier '+tierOf(save.xp)+'/'+BP_TIERS; }
+function updChrome(){ updCoins(); const P=curProfile(); const av=$('pcAv'); av.innerHTML=avHTML(P); av.style.background=P.color; $('pcName').textContent=P.name+(isGuest(P)&&gState==='ready'?' · Sign in':''); $('pcLv').textContent='LV '+(Math.floor(save.xp/BP_XP)+1)+' · Tier '+tierOf(save.xp)+'/'+BP_TIERS; }
 function setHUD(on){ $('hud').classList.toggle('hidden',!on); $('touch').classList.toggle('hidden',!(on&&isMobile)); updRotate(); }
 function updRotate(){ $('rotate').classList.toggle('hidden',!(isMobile&&state==='play'&&H>W)); }
 function heroLevels(h=curHero){ return HEROES[h].levels; }
@@ -1106,7 +1197,7 @@ function startLevel(i){
   for(const h of HKEYS) document.body.classList.remove('h-'+h); document.body.classList.add('h-'+curHero);
   const ab=ABILITY[curHero]; document.body.classList.toggle('has-ab',!!ab); if(ab) document.querySelector('.tb.web').textContent=ab;
   const runner=HSTATS[curHero].runner; document.querySelector('.tb.brake').textContent=runner?'⤒':'▼';
-  particles=[]; popups=[]; state='play'; show(null); setHUD(true);
+  particles=[]; popups=[]; state='play'; show(null); setHUD(true); setMusic(mode==='challenge'?'chal':'game');
   const c=world.focus(); cam.x=c.x+200; cam.y=c.y-60;
   $('hLevel').textContent=(mode==='challenge'?'⏱ CHALLENGE · ':'')+HEROES[curHero].name.toUpperCase()+' · LEVEL '+(i+1)+' · '+heroLevels()[i].name.toUpperCase();
   const M=isMobile, HINTS={
@@ -1219,17 +1310,19 @@ function openBP(){ state='bp'; const tier=tierOf(save.xp), into=save.xp-tier*BP_
 let delArmed=false;
 function buildProfile(){ const P=curProfile(); delArmed=false; $('bPfDel').textContent='🗑 DELETE';
   const av=$('pfAv'); av.innerHTML=avHTML(P); av.style.background=P.color; $('pfName').value=P.name;
+  const guest=isGuest(P); $('pfName').disabled=guest; $('pfName').title=guest?'Sign in with Google to pick your own name':''; $('pfGuest').classList.toggle('hidden',!guest);
+  $('bPicDel').classList.toggle('hidden',!P.img);
   $('pfLv').innerHTML='Level '+(Math.floor(save.xp/BP_XP)+1)+' · '+save.xp+' XP · Battle Pass tier '+tierOf(save.xp);
-  const A=$('pfAvatars'); A.innerHTML=''; AVATARS.forEach((e,i)=>{ const b=document.createElement('button'); b.textContent=e; if(P.avatar===e) b.className='on'; b.onclick=()=>{ P.avatar=e; P.color=AV_COLORS[i%AV_COLORS.length]; saveProfiles(); buildProfile(); updChrome(); }; A.appendChild(b); });
+  const A=$('pfAvatars'); A.innerHTML=''; AVATARS.forEach((e,i)=>{ const b=document.createElement('button'); b.textContent=e; if(P.avatar===e&&!P.img) b.className='on'; b.onclick=()=>{ P.avatar=e; delete P.img; P.color=AV_COLORS[i%AV_COLORS.length]; saveProfiles(); buildProfile(); updChrome(); }; A.appendChild(b); });
   let stars=0,cleared=0; for(const h of HKEYS){ const pr=prog(h); for(const k in pr.stars){ stars+=pr.stars[k]; cleared++; } }
   const heroes=HKEYS.filter(h=>save.heroOpen[h]).length;
   $('pfStats').innerHTML=[['Levels cleared',cleared],['Stars',stars],['Heroes',heroes+'/'+HKEYS.length],['Flips & rings',save.stats.flips],['Challenges',save.stats.challenges],['Coins earned',save.stats.coinsEarned]].map(([a,b])=>'<div><b>'+b+'</b>'+a+'</div>').join('');
   const L=$('pfList'); L.innerHTML=''; for(const pr of profiles.list){ const b=document.createElement('button'); if(pr.id===P.id) b.className='on';
-    b.innerHTML='<span class="av" style="background:'+pr.color+'">'+avHTML(pr)+'</span>'+pr.name.replace(/[<>&]/g,''); b.onclick=()=>switchProfile(pr.id); L.appendChild(b); }
+    b.innerHTML='<span class="av" style="background:'+pr.color+'">'+avHTML(pr)+'</span>'+pr.name.replace(/[<>&]/g,'')+(isGuest(pr)?'':' <small>G</small>'); b.onclick=()=>switchProfile(pr.id); L.appendChild(b); }
   $('bPfDel').style.display=profiles.list.length>1?'':'none';
   updGoogleUI(); }
 function switchProfile(id){ profiles.current=id; saveProfiles(); save=normalizeSave(loadJSON(SK+'.save.'+id,null)); persist(); setMute(!!save.muted); buildProfile(); updChrome(); }
-function newProfile(){ const id='p'+Date.now().toString(36); const i=profiles.list.length; profiles.list.push({id,name:'Player '+(i+1),avatar:AVATARS[i%AVATARS.length],color:AV_COLORS[i%AV_COLORS.length]}); saveProfiles(); switchProfile(id); }
+function newProfile(){ const id='p'+Date.now().toString(36); const i=profiles.list.filter(isGuest).length; profiles.list.push({id,name:i?'Guest '+(i+1):'Guest',avatar:AVATARS[i%AVATARS.length],color:AV_COLORS[i%AV_COLORS.length]}); saveProfiles(); switchProfile(id); }
 function deleteProfile(){ if(profiles.list.length<2) return; if(!delArmed){ delArmed=true; $('bPfDel').textContent='Tap again to delete'; return; }
   const id=profiles.current; profiles.list=profiles.list.filter(p=>p.id!==id); try{ localStorage.removeItem(SK+'.save.'+id); }catch(e){} switchProfile(profiles.list[0].id); }
 function openProfile(){ state='profile'; buildProfile(); show('sProfile'); }
@@ -1240,7 +1333,7 @@ function fillLBLevels(){ const h=$('lbHero').value; $('lbLevel').innerHTML=heroL
 async function loadLB(){ const h=$('lbHero').value, i=+$('lbLevel').value; $('lbList').innerHTML='<div class="sub">Loading…</div>';
   const r=await fetchBoard(h,i); const me=curProfile().id;
   $('lbNote').textContent=r.online?'🌍 Online leaderboard':'📱 This device\'s leaderboard (all local profiles). Online rankings turn on once the game has a leaderboard server.';
-  $('lbList').innerHTML=r.list.length?r.list.slice(0,20).map((e,k)=>'<div class="lbRow'+(e.pid===me||e.playerId===me?' me':'')+'"><span class="rk">#'+(k+1)+'</span><span>'+(e.avatar||'😎')+'</span><span class="nm">'+String(e.name||'Player').replace(/[<>&]/g,'')+'</span><span>'+fmt(e.time)+'</span></div>').join(''):'<div class="sub">No times yet — be the first!</div>'; }
+  $('lbList').innerHTML=r.list.length?r.list.slice(0,20).map((e,k)=>'<div class="lbRow'+(e.pid===me||e.playerId===me?' me':'')+'"><span class="rk">#'+(k+1)+'</span><span class="av">'+(profiles.list.find(q=>q.id===e.pid)?avHTML(profiles.list.find(q=>q.id===e.pid)):(e.avatar||'😎'))+'</span><span class="nm">'+String(e.name||'Player').replace(/[<>&]/g,'')+'</span><span>'+fmt(e.time)+'</span></div>').join(''):'<div class="sub">No times yet — be the first!</div>'; }
 
 /* ---------- events → fx ---------- */
 function burst(x,y,n,cols,spd,life,grav=900,size=4){ for(let i=0;i<n;i++){ const a=Math.random()*Math.PI*2, v=spd*(0.3+Math.random()*0.7); particles.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-spd*0.3,life:life*(0.6+Math.random()*0.6),max:life,col:cols[i%cols.length],size:size*(0.6+Math.random()*0.8),grav}); } }
@@ -1376,19 +1469,19 @@ const SKINS=[
  {id:'neon',name:'Neon Purple',price:250,body:'#a020f0',dark:'#3b0764',accent:'#22d3ee',suit:'#111827',suitDark:'#030712',arm:'#1f2937',helmet:'#f0abfc',stripe:'#a020f0',visor:'#22d3ee',rim:'#22d3ee'},
  {id:'tiger',name:'Tiger',price:300,body:'#ff8a00',dark:'#7c2d00',accent:'#111111',suit:'#1c1917',suitDark:'#0c0a09',arm:'#292524',helmet:'#ff8a00',stripe:'#111111',visor:'#111111',rim:'#fed7aa'},
  {id:'stealth',name:'Stealth',price:350,body:'#2a2a2e',dark:'#000000',accent:'#ff2a2a',suit:'#18181b',suitDark:'#000000',arm:'#27272a',helmet:'#2a2a2e',stripe:'#ff2a2a',visor:'#ff2a2a',rim:'#52525b'},
- {id:'candy',name:'Candy Pink',price:400,body:'#ff5fb8',dark:'#831843',accent:'#ffffff',suit:'#f472b6',suitDark:'#9d174d',arm:'#db2777',helmet:'#ffe4f1',stripe:'#ff5fb8',visor:'#4a044e',rim:'#fbcfe8'},
- {id:'lava',name:'Lava',price:500,body:'#ff4d00',dark:'#450a0a',accent:'#ffd000',suit:'#3b0a0a',suitDark:'#1c0505',arm:'#7f1d1d',helmet:'#ff7a1a',stripe:'#ffd000',visor:'#1c0505',rim:'#fdba74'},
- {id:'gold',name:'Solid Gold',price:750,body:'#f5c518',dark:'#7a5a00',accent:'#fff3b0',suit:'#3a2a00',suitDark:'#1f1600',arm:'#5c4400',helmet:'#f5c518',stripe:'#fff3b0',visor:'#3a2a00',rim:'#fde68a'},
- {id:'rainbow',name:'Rainbow',price:1000,body:'#f00',dark:'#222',accent:'#ff0',suit:'#00f',suitDark:'#008',arm:'#00a',helmet:'#ffffff',stripe:'#f00',visor:'#1b2533',rim:'#ffffff'},
+ {id:'candy',rarity:'rare',anim:true,name:'Candy Pink',price:400,body:'#ff5fb8',dark:'#831843',accent:'#ffffff',suit:'#f472b6',suitDark:'#9d174d',arm:'#db2777',helmet:'#ffe4f1',stripe:'#ff5fb8',visor:'#4a044e',rim:'#fbcfe8'},
+ {id:'lava',rarity:'rare',anim:true,name:'Lava',price:500,body:'#ff4d00',dark:'#450a0a',accent:'#ffd000',suit:'#3b0a0a',suitDark:'#1c0505',arm:'#7f1d1d',helmet:'#ff7a1a',stripe:'#ffd000',visor:'#1c0505',rim:'#fdba74'},
+ {id:'gold',rarity:'epic',anim:true,name:'Solid Gold',price:750,body:'#f5c518',dark:'#7a5a00',accent:'#fff3b0',suit:'#3a2a00',suitDark:'#1f1600',arm:'#5c4400',helmet:'#f5c518',stripe:'#fff3b0',visor:'#3a2a00',rim:'#fde68a'},
+ {id:'rainbow',rarity:'legendary',anim:true,name:'Rainbow',price:1000,body:'#f00',dark:'#222',accent:'#ff0',suit:'#00f',suitDark:'#008',arm:'#00a',helmet:'#ffffff',stripe:'#f00',visor:'#1b2533',rim:'#ffffff'},
 ];
 
 // battle-pass exclusive palettes (work on every hero)
 const BP_SKINS=[
- {id:'aurora',name:'Aurora',bp:true,body:'#34d399',dark:'#064e3b',accent:'#a78bfa',suit:'#0f766e',suitDark:'#134e4a',arm:'#115e59',helmet:'#ecfeff',stripe:'#a78bfa',visor:'#4c1d95',rim:'#a7f3d0'},
- {id:'midnight',name:'Midnight',bp:true,body:'#1e1b4b',dark:'#020617',accent:'#38bdf8',suit:'#0f172a',suitDark:'#020617',arm:'#1e293b',helmet:'#312e81',stripe:'#38bdf8',visor:'#38bdf8',rim:'#38bdf8'},
- {id:'cherry',name:'Cherry Blossom',bp:true,body:'#fda4af',dark:'#881337',accent:'#ffffff',suit:'#fb7185',suitDark:'#9f1239',arm:'#e11d48',helmet:'#fff1f2',stripe:'#fb7185',visor:'#4c0519',rim:'#ffe4e6'},
- {id:'season1',name:'Season 1 Champion',bp:true,body:'#fbbf24',dark:'#451a03',accent:'#7c3aed',suit:'#7c3aed',suitDark:'#3b0764',arm:'#6d28d9',helmet:'#fef3c7',stripe:'#7c3aed',visor:'#1e1b4b',rim:'#fde68a'},
- {id:'galaxy',name:'Galaxy',bp:true,anim:true,body:'#6d28d9',dark:'#1e1b4b',accent:'#f0abfc',suit:'#312e81',suitDark:'#1e1b4b',arm:'#3730a3',helmet:'#e0e7ff',stripe:'#f0abfc',visor:'#0f172a',rim:'#c4b5fd'},
+ {id:'aurora',rarity:'epic',anim:true,name:'Aurora',bp:true,body:'#34d399',dark:'#064e3b',accent:'#a78bfa',suit:'#0f766e',suitDark:'#134e4a',arm:'#115e59',helmet:'#ecfeff',stripe:'#a78bfa',visor:'#4c1d95',rim:'#a7f3d0'},
+ {id:'midnight',rarity:'epic',anim:true,name:'Midnight',bp:true,body:'#1e1b4b',dark:'#020617',accent:'#38bdf8',suit:'#0f172a',suitDark:'#020617',arm:'#1e293b',helmet:'#312e81',stripe:'#38bdf8',visor:'#38bdf8',rim:'#38bdf8'},
+ {id:'cherry',rarity:'epic',anim:true,name:'Cherry Blossom',bp:true,body:'#fda4af',dark:'#881337',accent:'#ffffff',suit:'#fb7185',suitDark:'#9f1239',arm:'#e11d48',helmet:'#fff1f2',stripe:'#fb7185',visor:'#4c0519',rim:'#ffe4e6'},
+ {id:'season1',rarity:'legendary',anim:true,name:'Season 1 Champion',bp:true,body:'#fbbf24',dark:'#451a03',accent:'#7c3aed',suit:'#7c3aed',suitDark:'#3b0764',arm:'#6d28d9',helmet:'#fef3c7',stripe:'#7c3aed',visor:'#1e1b4b',rim:'#fde68a'},
+ {id:'galaxy',rarity:'legendary',anim:true,name:'Galaxy',bp:true,body:'#6d28d9',dark:'#1e1b4b',accent:'#f0abfc',suit:'#312e81',suitDark:'#1e1b4b',arm:'#3730a3',helmet:'#e0e7ff',stripe:'#f0abfc',visor:'#0f172a',rim:'#c4b5fd'},
 ];
 // each hero's own original look
 const HERO_DEFAULT={
@@ -1404,11 +1497,22 @@ const HERO_DEFAULT={
 // skins available for a hero: its original look first, then the shared palettes
 function heroSkins(h){ const d=HERO_DEFAULT[h]; const base=d?[Object.assign({id:'default',name:'Original',price:0},d)]:[Object.assign({},SKINS[0],{id:'default',name:'Original'})];
   return base.concat(SKINS.filter(k=>k.id!=='classic'),BP_SKINS); }
-function animSkin(s){ const h=(performance.now()/10)%360;
-  if(s.id==='rainbow') return Object.assign({},s,{body:`hsl(${h},90%,55%)`,stripe:`hsl(${h},90%,55%)`,accent:`hsl(${(h+180)%360},95%,60%)`,suit:`hsl(${(h+90)%360},75%,48%)`,suitDark:`hsl(${(h+90)%360},75%,30%)`,arm:`hsl(${(h+90)%360},75%,38%)`,rim:`hsl(${(h+45)%360},90%,75%)`});
-  if(s.id==='galaxy'){ const g=250+30*Math.sin(performance.now()/700); return Object.assign({},s,{body:`hsl(${g},70%,45%)`,accent:`hsl(${g+60},90%,80%)`,stripe:`hsl(${g+60},90%,80%)`}); }
-  return s; }
-function skinFor(h,id){ const list=heroSkins(h); const s=list.find(k=>k.id===id)||list[0]; return s.id==='rainbow'||s.anim?animSkin(s):s; }
+// rare, epic and legendary skins shift colour over time
+function animSkin(s){ const t=performance.now()/1000, w=Math.sin(t*3), h=(t*60)%360; const o=Object.assign({},s);
+  switch(s.id){
+    case 'rainbow': Object.assign(o,{body:`hsl(${h},90%,55%)`,stripe:`hsl(${h},90%,55%)`,accent:`hsl(${(h+180)%360},95%,60%)`,suit:`hsl(${(h+90)%360},75%,48%)`,suitDark:`hsl(${(h+90)%360},75%,30%)`,arm:`hsl(${(h+90)%360},75%,38%)`,rim:`hsl(${(h+45)%360},90%,75%)`}); break;
+    case 'galaxy': { const g=255+35*Math.sin(t*1.4); Object.assign(o,{body:`hsl(${g},72%,${42+8*w}%)`,accent:`hsl(${g+70},95%,78%)`,stripe:`hsl(${g+70},95%,78%)`,rim:`hsl(${g+40},90%,${75+10*w}%)`,suit:`hsl(${g-10},60%,25%)`}); break; }
+    case 'season1': Object.assign(o,{body:`hsl(${43+6*w},95%,${52+10*w}%)`,accent:`hsl(${270+15*w},80%,${55+10*Math.sin(t*5)}%)`,stripe:`hsl(${270+15*w},80%,60%)`,rim:`hsl(48,100%,${72+15*w}%)`}); break;
+    case 'gold': Object.assign(o,{body:`hsl(46,92%,${50+12*w}%)`,accent:`hsl(50,100%,${82+10*Math.sin(t*4+1)}%)`,helmet:`hsl(46,92%,${52+12*w}%)`,rim:`hsl(48,100%,${70+15*w}%)`}); break;
+    case 'aurora': { const g=150+70*(0.5+0.5*Math.sin(t*0.9)); Object.assign(o,{body:`hsl(${g},75%,55%)`,accent:`hsl(${g+90},85%,72%)`,stripe:`hsl(${g+90},85%,72%)`,suit:`hsl(${g+10},60%,30%)`}); break; }
+    case 'cherry': Object.assign(o,{body:`hsl(350,95%,${78+6*w}%)`,suit:`hsl(345,85%,${62+6*w}%)`,accent:`hsl(0,0%,${94+6*w}%)`}); break;
+    case 'midnight': Object.assign(o,{accent:`hsl(195,95%,${55+20*w}%)`,stripe:`hsl(195,95%,${55+20*w}%)`,visor:`hsl(195,95%,${55+20*w}%)`,rim:`hsl(195,95%,${55+20*w}%)`}); break;
+    case 'lava': Object.assign(o,{body:`hsl(${16+10*w},100%,${50+6*Math.sin(t*7)}%)`,accent:`hsl(${45+8*w},100%,${55+10*w}%)`,stripe:`hsl(${45+8*w},100%,55%)`,helmet:`hsl(${22+8*w},100%,55%)`}); break;
+    case 'candy': Object.assign(o,{body:`hsl(${325+8*w},90%,${64+6*w}%)`,suit:`hsl(${330+8*w},85%,${70+5*w}%)`}); break;
+  }
+  return o; }
+const RARITY={common:{label:'COMMON',col:'#94a3b8'},rare:{label:'RARE',col:'#38bdf8'},epic:{label:'EPIC',col:'#c084fc'},legendary:{label:'LEGENDARY',col:'#fbbf24'}};
+function skinFor(h,id){ const list=heroSkins(h); const s=list.find(k=>k.id===id)||list[0]; return s.anim?animSkin(s):s; }
 function skinOf(id){ return skinFor('biker',id==='classic'?'default':id); }
 function curSkin(h){ return skinFor(h,(save.skin&&save.skin[h])||'default'); }
 function drawHelmet(c,x,y,sk){ c.fillStyle=sk.helmet; c.strokeStyle='#333'; c.lineWidth=2; c.beginPath(); c.arc(x,y,PHYS.HR+1,0,7); c.fill(); c.stroke();
@@ -1571,15 +1675,17 @@ function drawBike(){
 }
 
 /* ---------- shop ---------- */
-let shopHero='biker', shopFrom='title';
+let shopHero='biker', shopFrom='title', shopAnim=[];
+setInterval(()=>{ if(state!=='shop') return; for(const [c,h,sk] of shopAnim) drawPreview(c,h,animSkin(sk)); },70);
 function ownedSkins(h){ if(!save.owned[h]) save.owned[h]=['default']; return save.owned[h]; }
 function buildShop(){
   const tabs=$('shopTabs'); tabs.innerHTML=''; const prevHero=$('shopGrid').dataset.h;
   for(const h of HKEYS){ const b=document.createElement('button'); b.className='tab'+(h===shopHero?' on':''); b.textContent=HEROES[h].name; b.onclick=()=>{ shopHero=h; buildShop(); }; tabs.appendChild(b); }
-  const g=$('shopGrid'); g.innerHTML=''; const h=shopHero, own=ownedSkins(h);
+  const g=$('shopGrid'); g.innerHTML=''; shopAnim=[]; const h=shopHero, own=ownedSkins(h);
   $('shopNote').textContent=save.heroOpen[h]?'':'🔒 You haven\'t unlocked '+HEROES[h].name+' yet — skins you buy now are ready when you do.';
   for(const sk of heroSkins(h)){ const owned=own.includes(sk.id)||(sk.bp&&save.bpSkins.includes(sk.id)), eq=((save.skin[h]||'default')===sk.id);
-    const card=document.createElement('div'); card.className='card'+(eq?' eq':'');
+    const rar=RARITY[sk.rarity||'common']; const card=document.createElement('div'); card.className='card r-'+(sk.rarity||'common')+(eq?' eq':'');
+    if(sk.id!=='default') card.insertAdjacentHTML('beforeend','<div class="rar" style="color:'+rar.col+'">'+rar.label+(sk.anim?' · ANIMATED':'')+'</div>');
     const cv2=document.createElement('canvas'); cv2.width=320; cv2.height=200; card.appendChild(cv2);
     const nm=document.createElement('div'); nm.className='nm'; nm.textContent=sk.name; card.appendChild(nm);
     const bt=document.createElement('button');
@@ -1590,7 +1696,7 @@ function buildShop(){
       bt.onclick=()=>{ if(save.coins<sk.price){ bt.textContent='Need '+(sk.price-save.coins)+' more'; setTimeout(buildShop,1100); return; }
         save.coins-=sk.price; own.push(sk.id); save.skin[h]=sk.id; persist(); tone([660,990],0.1,'triangle',0.1); updCoins(true); buildShop(); }; }
     card.appendChild(bt); g.appendChild(card);
-    drawPreview(cv2,h,sk.id==='rainbow'||sk.anim?animSkin(sk):sk);
+    drawPreview(cv2,h,sk.anim?animSkin(sk):sk); if(sk.anim) shopAnim.push([cv2,h,sk]);
   }
   if(prevHero&&prevHero!==h) stagger(g); g.dataset.h=h;
 }
@@ -1677,6 +1783,7 @@ function frame(now){
     if(n===5) acc=0;
     // fx
     const c=world.focus(), sp=Math.hypot(c.vx,c.vy);
+    { const sk=heroSkins(world.hero).find(k=>k.id===(save.skin[world.hero]||'default')); if(sk&&(sk.rarity==='legendary'||sk.rarity==='epic')&&Math.random()<(sk.rarity==='legendary'?0.6:0.3)) particles.push({x:c.x+(Math.random()-.5)*50,y:c.y-10+(Math.random()-.5)*50,vx:-c.vx*0.1,vy:-30-Math.random()*40,life:0.6,max:0.6,col:animSkin(sk).accent,size:2+Math.random()*2.5,grav:0}); }
     leanVis+=(((inp.fwd?1:0)-(inp.back?1:0))-leanVis)*Math.min(1,dt*10);
     if(world.kind==='flight'){ const f=world.f; engineSound(0,0,false);
       if(!f.crashed&&world.started){ const ca=Math.cos(f.ang),sa=Math.sin(f.ang); particles.push({x:f.x-ca*30+(Math.random()-.5)*6,y:f.y-sa*30+(Math.random()-.5)*6,vx:-ca*60,vy:-sa*60,life:0.45,max:0.45,col:Math.random()<.5?'#67e8f9':'#e0fbff',size:4+Math.random()*3,grav:0}); } }
@@ -1707,7 +1814,14 @@ $('bChal').onclick=()=>{ initAudio(); openChallenge(); }; $('bChalBack').onclick
 $('bBP').onclick=()=>{ initAudio(); openBP(); }; $('bBPBack').onclick=goTitle;
 $('bLB').onclick=()=>{ initAudio(); openLB(); }; $('bLBBack').onclick=goTitle; $('lbHero').onchange=()=>{ fillLBLevels(); loadLB(); }; $('lbLevel').onchange=loadLB;
 $('profileChip').onclick=()=>{ if(state!=='play') openProfile(); }; $('bPfBack').onclick=goTitle;
-$('pfName').oninput=()=>{ const P=curProfile(); P.name=($('pfName').value.trim()||'Player').slice(0,16); saveProfiles(); updChrome(); };
+$('pfName').oninput=()=>{ const P=curProfile(); if(isGuest(P)) return; P.name=($('pfName').value.trim()||'Player').slice(0,16); saveProfiles(); updChrome(); };
+// profile picture: crop to a square and shrink so it fits in local storage
+$('pfFile').onchange=e=>{ const f=e.target.files&&e.target.files[0]; if(!f) return; if(!/^image\//.test(f.type)){ toast('Please pick an image file'); return; }
+  const rd=new FileReader(); rd.onload=()=>{ const im=new Image(); im.onload=()=>{ const S=160, c=document.createElement('canvas'); c.width=c.height=S; const x=c.getContext('2d');
+      const m=Math.min(im.width,im.height); x.drawImage(im,(im.width-m)/2,(im.height-m)/2,m,m,0,0,S,S);
+      const P=curProfile(); P.img=c.toDataURL('image/jpeg',0.85); saveProfiles(); buildProfile(); updChrome(); toast('Profile picture updated'); };
+    im.onerror=()=>toast('Couldn\'t read that image'); im.src=rd.result; }; rd.readAsDataURL(f); e.target.value=''; };
+$('bPicDel').onclick=()=>{ const P=curProfile(); delete P.img; saveProfiles(); buildProfile(); updChrome(); };
 $('bPfNew').onclick=newProfile; $('bGOut').onclick=googleSignOut; $('bPfDel').onclick=deleteProfile;
 $('bBackTitle').onclick=()=>openHeroes();
 $('bHeroBack').onclick=goTitle;
@@ -1717,7 +1831,10 @@ $('bKeyper').onclick=()=>{ initAudio(); openKeyper(); }; $('bKeyBack').onclick=(
 $('bRedeem').onclick=redeem;
 $('bPause').onclick=()=>pause();
 $('bRestart').onclick=()=>{ if(state==='play') startLevel(curLevel); };
-$('bMute').onclick=()=>{ initAudio(); setMute(!save.muted); };
+$('bMute').onclick=()=>{ initAudio(); setMusicOn(save.music===false); };
+$('bMusicT').onclick=()=>{ initAudio(); setMusicOn(save.music===false); }; $('bSfxT').onclick=()=>{ initAudio(); setMute(!save.muted); };
+$('bMusicP').onclick=()=>{ initAudio(); setMusicOn(save.music===false); }; $('bSfxP').onclick=()=>{ initAudio(); setMute(!save.muted); };
+document.addEventListener('pointerdown',()=>initAudio(),{once:true});
 $('bResume').onclick=resume; $('bPRestart').onclick=()=>startLevel(curLevel); $('bPLevels').onclick=openLevels;
 $('bDLevels').onclick=openLevels; $('bDRetry').onclick=()=>startLevel(curLevel); $('bDNext').onclick=nextLevel;
 document.addEventListener('visibilitychange',()=>{ if(document.hidden&&state==='play') pause(); });
